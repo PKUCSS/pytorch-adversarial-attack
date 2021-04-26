@@ -1,0 +1,54 @@
+Homework 3
+
+White-box and Black-box attack
+Dataset：MNIST or CIFAR-10
+Content: 
+Write write-box and black-box attack codes by yourself. Then load a pretrained model and evaluate it under the above attack. You can follow the following steps:
+	Finish the code for FGSM and PGD attack with L_∞ constraint.
+	Choose one black-box attack method and finish its code.
+	Load the attached pretrained model (smallcnn for MNIST, wrn for CIFAR-10) and evaluate the performance under the above attacks. 
+(models and corresponding python files will be updated later.)
+	Hyper-parameters for MNIST:
+The limit on the perturbation size is ϵ=0.3 for both white-box and black-box attack.
+The inner iteration for PGD is 10.
+You should choose the step-size for PGD by yourself to reach the following success rate.
+
+Hyper-parameters for CIFAR-10:
+The limit on the perturbation size is ϵ=0.031 for both white-box and black-box attack.
+The inner iteration for PGD is 10.
+You should choose the step-size for PGD by yourself to reach the following success rate.
+
+Besides the above settings, you could choose other hyperparameters to see the influence.
+	The training procedure for both models didn’t involve data normalization. For this account, you only need “transforms.ToTensor()” for the test data.
+	If you need another model for black-box attack, you may it by your-self.
+
+Requirements: Submit your code and a pdf report in zip file. The report should include:
+	Experimental setup. In other words, a clear description of the platform, the dataset, step-size you choose for PGD, the attack method you used (you should introduce the black-box method you choose clearly) and how to use your code to reproduce your results. If your code is built upon an online repository/article, please include a reference to it.
+	Results. 
+	List the success rate for different attacks in a table. 
+For the white-box attack, your final success rate should be higher or equal to the following result.
+MNIST	Success Rate
+FGSM	65%-75%
+PGD-10	98%
+
+CIFAR-10	Success Rate
+FGSM	80-90%
+PGD-10	100%
+For the black-box attack, you need to make sure your success rate is higher than the following result. (You may choose another black-box method if you can’t reach this score.)
+Black-box	Success Rate
+MNIST	40%
+CIFAR10	70%
+
+	Plot a figure to show the relationship between the success rate and the step-size of PGD. Suppose the final step-size for the above method is γ, you may plot a scatter diagram by choose the step-size equal to [γ/8,γ/4,γ/2,γ,2γ].
+	You can try other hyperparameters. Then you can report the results and analyze their influence. (Optional)
+
+Finally, your score will be mainly based on the following aspects:
+	The results of the experiment.
+	Whether your report is clear and well-formatted.
+	Richness of the contents. Your score will be higher if you notice some interesting phenomenon or raise some special analysis(optional).
+
+You must not:
+	Cheat other’s report and codes
+	Directly copy results from online articles or repository.
+
+
